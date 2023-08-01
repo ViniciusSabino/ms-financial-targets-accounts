@@ -1,0 +1,9 @@
+spring:
+  profiles:
+    active: ${ENV}
+
+  ## Server
+server:
+  port: ${ENV_PORT:8085}
+  servlet:
+    contextPath: ${ENV_CTX_PATH:/api}
