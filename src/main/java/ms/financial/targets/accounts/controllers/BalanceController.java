@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/balance")
 public class BalanceController {
+
     @GetMapping("/current")
     public String current() {
         return "Current";

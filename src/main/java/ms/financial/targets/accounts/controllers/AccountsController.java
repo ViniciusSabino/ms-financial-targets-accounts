@@ -12,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/accounts")
 public class AccountsController {
+
     @GetMapping("/all")
     public List<Account> listAllAccounts() {
         return new ArrayList<Account>();
