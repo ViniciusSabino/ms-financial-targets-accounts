@@ -2,7 +2,11 @@ spring:
   profiles:
     active: ${ENV}
 
-  ## Server
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb+srv://vinicius-rocha:qpOqeG8tgC0d7xBk@financialtargets.y90ji.mongodb.net/financial-targets}
+      database: ${MONGODB_DATABASE:financial-targets}
+
 server:
   port: ${ENV_PORT:8085}
   servlet:

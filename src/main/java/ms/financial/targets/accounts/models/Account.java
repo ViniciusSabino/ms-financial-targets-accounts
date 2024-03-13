@@ -1,19 +1,24 @@
 package ms.financial.targets.accounts.models;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
 import ms.financial.targets.accounts.enums.AccountType;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
+@Data
+@AllArgsConstructor
+@Document("accounts")
 public class Account {
-    private Integer id;
-    private String name;
-    private AccountType type;
-    private boolean isMain;
-    private String userId;
 
-    public Account(Integer id, String name, AccountType type, boolean isMain, String userId) {
-        this.id = id;
-        this.name = name;
-        this.type = type;
-        this.isMain = isMain;
-        this.userId = userId;
-    }
+    @Id
+    private String id;
+
+    private String name;
+
+    private AccountType type;
+
+    private boolean isMain;
+
+    private String userId;
 }
