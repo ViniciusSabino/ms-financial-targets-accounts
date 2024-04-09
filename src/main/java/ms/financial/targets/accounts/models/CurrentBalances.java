@@ -1,9 +1,20 @@
 package ms.financial.targets.accounts.models;
 
-import java.util.ArrayList;
+import lombok.Builder;
+import lombok.Data;
+import ms.financial.targets.accounts.enums.Months;
+
 import java.util.List;
 
+@Data
+@Builder
 public class CurrentBalances {
-    private List<AccountBalance> accounts = new ArrayList<>();
-    private List<AccountBalance> investments = new ArrayList<>();
+
+    private Months month;
+
+    private Integer year;
+
+    private List<Balance> accounts;
+
+    private List<Balance> investments;
 }

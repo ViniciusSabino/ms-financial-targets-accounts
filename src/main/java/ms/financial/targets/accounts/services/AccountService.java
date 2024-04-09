@@ -14,6 +14,6 @@ public class AccountService {
     private final AccountRepository repository;
 
     public List<Account> listAllAccounts() {
-      return this.repository.listAllAccounts();
+      return repository.listAllAccounts();
     }
 }

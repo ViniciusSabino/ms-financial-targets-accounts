@@ -2,23 +2,22 @@ package ms.financial.targets.accounts.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import ms.financial.targets.accounts.enums.AccountType;
+import ms.financial.targets.accounts.enums.Months;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
-@Document("accounts")
-public class Account {
-
+@Document("balances")
+public class Balance {
     @Id
     private String id;
 
-    private String name;
+    private String account;
 
-    private AccountType type;
+    private Months month;
 
-    private boolean isMain;
+    private Integer year;
 
-    private String user;
+    private float value;
 }
