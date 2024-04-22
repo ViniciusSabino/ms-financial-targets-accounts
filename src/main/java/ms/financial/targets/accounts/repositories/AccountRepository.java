@@ -1,7 +1,7 @@
 package ms.financial.targets.accounts.repositories;
 
 import lombok.RequiredArgsConstructor;
-import ms.financial.targets.accounts.models.Account;
+import ms.financial.targets.accounts.models.Documents.Account;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

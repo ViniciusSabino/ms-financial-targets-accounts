@@ -1,4 +1,4 @@
-package ms.financial.targets.accounts.models;
+package ms.financial.targets.accounts.models.Documents;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

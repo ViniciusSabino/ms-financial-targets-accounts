@@ -3,6 +3,7 @@ package ms.financial.targets.accounts.models;
 import lombok.Builder;
 import lombok.Data;
 import ms.financial.targets.accounts.enums.Months;
+import ms.financial.targets.accounts.models.Documents.Balance;
 
 import java.util.List;
 

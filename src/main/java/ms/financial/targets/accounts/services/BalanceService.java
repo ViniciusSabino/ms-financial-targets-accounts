@@ -1,8 +1,10 @@
 package ms.financial.targets.accounts.services;
 
 import lombok.RequiredArgsConstructor;
+import ms.financial.targets.accounts.enums.AccountType;
 import ms.financial.targets.accounts.enums.Months;
-import ms.financial.targets.accounts.models.Balance;
+import ms.financial.targets.accounts.models.CurrentBalances;
+import ms.financial.targets.accounts.models.Documents.Balance;
 import ms.financial.targets.accounts.repositories.BalanceRepository;
 import org.springframework.stereotype.Service;
 
@@ -15,16 +17,26 @@ public class BalanceService {
 
     private final BalanceRepository repository;
 
-    public List<Balance> getCurrentBalances() {
+    public CurrentBalances getCurrentBalances() {
         LocalDate now = LocalDate.now();
 
         Months currentMonth = Months.valueOf(now.getMonth().name());
 
         List<Balance> balances = repository.getBalancesByMonth(currentMonth);
 
-        // TODO: Mapeamento para o formato esperado no front-end;
-        // TODO: Filtrar e separar por saldos de contas e investimentos
+        List<Balance> accounts = balances.stream()
+                .filter(balance -> balance.getAccount().getType() == AccountType.CHECKING_ACCOUNT)
+                .toList();
 
-        return balances;
+        List<Balance> investments = balances.stream()
+                .filter(balance -> balance.getAccount().getType() == AccountType.INVESTMENT)
+                .toList();
+
+        return CurrentBalances.builder()
+                .month(currentMonth)
+                .year(now.getYear())
+                .accounts(accounts)
+                .investments(investments)
+                .build();
     }
 }

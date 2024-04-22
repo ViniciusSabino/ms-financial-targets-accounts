@@ -1,7 +1,7 @@
 package ms.financial.targets.accounts.repositories;
 
 import ms.financial.targets.accounts.enums.Months;
-import ms.financial.targets.accounts.models.Balance;
+import ms.financial.targets.accounts.models.Documents.Balance;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 

@@ -1,10 +1,11 @@
-package ms.financial.targets.accounts.models;
+package ms.financial.targets.accounts.models.Documents;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import ms.financial.targets.accounts.enums.Months;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.DocumentReference;
 
 @Data
 @AllArgsConstructor
@@ -13,7 +14,8 @@ public class Balance {
     @Id
     private String id;
 
-    private String account;
+    @DocumentReference
+    private Account account;
 
     private Months month;
 
